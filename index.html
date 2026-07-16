@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <title>Elige tu Cita</title>
+  <title>Elige tu Restaurante</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Cormorant+Garamond:wght@300;400;600&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -184,6 +184,13 @@
       text-align: center;
       letter-spacing: .02em;
     }
+    .card-back .address {
+      font-size: .78rem;
+      color: rgba(245,239,230,.55);
+      text-align: center;
+      letter-spacing: .03em;
+      font-weight: 300;
+    }
     .card-back .desc {
       font-size: .88rem;
       color: rgba(245,239,230,.65);
@@ -232,7 +239,7 @@
     }
     #chosen-screen > p {
       color: var(--muted);
-      max-width: 300px;
+      max-width: 320px;
       line-height: 1.7;
       font-size: clamp(.88rem, 3vw, 1rem);
     }
@@ -242,7 +249,7 @@
       display: flex; flex-direction: column;
       align-items: center; gap: 12px;
       border: 1px solid rgba(200,169,110,.35);
-      width: min(280px, 85vw);
+      width: min(300px, 85vw);
     }
     #chosen-screen .chosen-card.type-a { background: linear-gradient(160deg,#1e2b3a,#151f2b); }
     #chosen-screen .chosen-card.type-b { background: linear-gradient(160deg,#2b1e2a,#1f1527); }
@@ -253,11 +260,38 @@
       font-size: clamp(1rem, 3.5vw, 1.25rem);
       color: var(--cream);
     }
+    #chosen-screen .chosen-card .address {
+      
+      color: white;
+    }
     #chosen-screen .chosen-card .desc {
-      font-size: clamp(.8rem, 2.5vw, .9rem);
-      color: rgba(245,239,230,.65);
+      
+      color: white  ;
       line-height: 1.55;
       text-align: center;
+    }
+
+    .datetime-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 14px 24px;
+      border-radius: 12px;
+      border: 1px solid rgba(200,169,110,.35);
+      background: rgba(200,169,110,.06);
+    }
+    .datetime-box .label {
+      font-size: .68rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .datetime-box .value {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1rem, 3.5vw, 1.3rem);
+      color: var(--cream);
+      text-transform: capitalize;
     }
 
     .note {
@@ -313,6 +347,7 @@
         min-width: 0;
       }
       .card-back .title { font-size: .98rem; text-align: left; }
+      .card-back .address { font-size: .7rem; text-align: left; }
       .card-back .desc  { font-size: .76rem; text-align: left; line-height: 1.45; }
       .card-back .tag   { align-self: flex-start; font-size: .6rem; }
 
@@ -321,7 +356,7 @@
     }
 
     @media (max-width: 360px) {
-      :root { --card-h: 116px; }
+      :root { --card-h: 120px; }
       .card-back .icon { font-size: 2rem; }
       .card-back .title { font-size: .9rem; }
       .card-back .desc  { font-size: .72rem; }
@@ -342,7 +377,7 @@
 <div class="wrapper">
 
   <header>
-    <h1>Elige tu <span>cita</span></h1>
+    <h1>Elige tu <span>restaurante</span></h1>
     <p>Voltea una carta y descubre el plan</p>
   </header>
 
@@ -355,11 +390,11 @@
           <p>Toca para revelar</p>
         </div>
         <div class="card-face card-back type-a">
-          <div class="icon" style="color:#7aadcf">🎬</div>
+          <div class="icon" style="color:#7aadcf">🪗</div>
           <div class="card-back-text">
-            <div class="title">Cine</div>
-            <div class="desc">Escogemos la película juntos (terror preferiblemente), crispetas, dulces y demás.</div>
-            <div class="tag">Cine</div>
+            <div class="title">La Mondaquera</div>
+            <div class="address">Cra. 35 #54-61, Bucaramanga</div>
+           
           </div>
         </div>
       </div>
@@ -372,11 +407,11 @@
           <p>Toca para revelar</p>
         </div>
         <div class="card-face card-back type-b">
-          <div class="icon" style="color:#c0697a">🥾</div>
+          <div class="icon" style="color:#c0697a">🍟</div>
           <div class="card-back-text">
-            <div class="title">Senderismo & Desayuno</div>
-            <div class="desc">Madrugamos, caminamos entre naturaleza y terminamos echando brunch (yuca y suero).</div>
-            <div class="tag">Aventura</div>
+            <div class="title">Papacitas</div>
+            <div class="address">Cra. 35 #38-09, Bucaramanga</div>
+            
           </div>
         </div>
       </div>
@@ -391,9 +426,9 @@
         <div class="card-face card-back type-c">
           <div class="icon" style="color:#7abf9c">🍔</div>
           <div class="card-back-text">
-            <div class="title">Burguer Master</div>
-            <div class="desc">Hamburguesas enormes, filas eternas y la compañía más expresiva que podrás tener.</div>
-            <div class="tag">Foodie</div>
+            <div class="title">La Bonita Burguer</div>
+            <div class="address">Cra. 35 #38-09, Bucaramanga</div>
+            
           </div>
         </div>
       </div>
@@ -402,10 +437,14 @@
   </div>
 
   <div id="chosen-screen">
-    <div class="big-icon">💌</div>
-    <h2>¡Ya elegiste tu cita!</h2>
-    <p>Recuerda que esta aventura te espera. Aquí está lo que escogiste:</p>
+    <div class="tenor-gif-embed big-icon" data-postid="22089820" data-share-method="host" data-aspect-ratio="1" data-width="30%"><a href="https://tenor.com/view/perro-bailando-gif-22089820">Perro Bailando GIF</a>from <a href="https://tenor.com/search/perro+bailando-gifs">Perro Bailando GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+    <h2>¡Ya elegiste tu restaurante!</h2>
+    <p>Este es el plan que te espera:</p>
     <div class="chosen-card" id="chosen-card-detail"></div>
+    <div class="datetime-box">
+      <div class="label">Fecha y hora</div>
+      <div class="value" id="chosen-datetime"></div>
+    </div>
   </div>
 
   <p class="note" id="footer-note">Solo puedes elegir una vez ✦</p>
@@ -415,10 +454,27 @@
 <script>
   const STORAGE_KEY = 'date_choice_v1';
 
+  // Fecha fija de la cita: pasado mañana a las 7:00 pm
+  const APPOINTMENT_DATE = new Date();
+  APPOINTMENT_DATE.setDate(APPOINTMENT_DATE.getDate() + 2);
+  APPOINTMENT_DATE.setHours(19, 0, 0, 0);
+
+  function formatAppointment(date) {
+    const dayName = date.toLocaleDateString('es-ES', { weekday: 'long' });
+    const day = date.getDate();
+    const monthName = date.toLocaleDateString('es-ES', { month: 'long' });
+    const year = date.getFullYear();
+    let hours = date.getHours();
+    const ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+    hours = hours % 12;
+    if (hours === 0) hours = 12;
+    return `${dayName}, ${day} de ${monthName} de ${year} · ${hours}:00 ${ampm}`;
+  }
+
   const cards = [
-    { type: 'type-a', icon: '🎬', iconColor: '#7aadcf', title: 'Cine', desc: 'Escogemos la película juntos (terror preferiblemente), crispetas, dulces y demás.' },
-    { type: 'type-b', icon: '🥾', iconColor: '#c0697a', title: 'Senderismo & Desayuno', desc: 'Madrugamos, caminamos entre naturaleza y terminamos echando brunch (yuca y suero).' },
-    { type: 'type-c', icon: '🍔', iconColor: '#7abf9c', title: 'Burguer Master', desc: 'Hamburguesas enormes, filas eternas y la compañía más expresiva que podrás tener.' },
+    { type: 'type-a', icon: '🪗', iconColor: '#7aadcf', title: 'La Mondaquera', address: 'Cra. 35 #54-61, Bucaramanga'},
+    { type: 'type-b', icon: '🍟', iconColor: '#c0697a', title: 'Papacitas', address: 'Cra. 35 #38-09, Bucaramanga' },
+    { type: 'type-c', icon: '🍔', iconColor: '#7abf9c', title: 'La Bonita Burguer', address: 'Cra. 35 #38-09, Bucaramanga' },
   ];
 
   function flipCard(index) {
@@ -428,19 +484,24 @@
 
     scene.classList.add('flipped');
 
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ chosen: index, date: new Date().toISOString() }));
+
     setTimeout(() => {
       for (let i = 0; i < 3; i++) {
         if (i !== index) document.getElementById('card-' + i).classList.add('locked');
       }
-      document.getElementById('footer-note').textContent = '¡Maravillosa elección! ✦';
+      document.getElementById('footer-note').textContent = '¡Elección confirmada! ✦';
     }, 600);
 
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({ chosen: index, date: new Date().toISOString() }));
+    // Deja ver la carta volteada un momento y luego pasa a la pantalla de reserva
+    setTimeout(() => {
+      showChosenScreen(index, false);
+    }, 1600);
   }
 
-  function showChosenScreen(index) {
+  function showChosenScreen(index, isReturningVisit) {
     document.getElementById('cards-container').style.display = 'none';
-    document.querySelector('header p').textContent = 'Ya tomaste tu decisión 💫';
+    document.querySelector('header p').textContent = 'Ya tomaste tu decisión 🎉';
 
     const screen = document.getElementById('chosen-screen');
     screen.style.display = 'flex';
@@ -450,14 +511,18 @@
     document.getElementById('chosen-card-detail').innerHTML = `
       <div class="icon" style="color:${c.iconColor}">${c.icon}</div>
       <div class="title">${c.title}</div>
-      <div class="desc">${c.desc}</div>
+      <div class="address">${c.address}</div>
+      
     `;
-    document.getElementById('footer-note').textContent = 'Guardado desde tu visita anterior ✦';
+    document.getElementById('chosen-datetime').textContent = formatAppointment(APPOINTMENT_DATE);
+    document.getElementById('footer-note').textContent = isReturningVisit
+      ? 'Guardado desde tu visita anterior ✦'
+      : '¡Reserva confirmada! ✦';
   }
 
   (function init() {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved) showChosenScreen(JSON.parse(saved).chosen);
+    if (saved) showChosenScreen(JSON.parse(saved).chosen, true);
   })();
 </script>
 
